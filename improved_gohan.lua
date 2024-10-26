@@ -16,7 +16,7 @@ end)()
 
 coroutine.wrap(function()
     local clockTime = game.Lighting.ClockTime;
-    print("la hora es "..clockTime..)
+    print("la hora es "..clockTime)
     if (clockTime > 0 and clockTime < 12) then
         events.TP:InvokeServer("Earth")
     end
