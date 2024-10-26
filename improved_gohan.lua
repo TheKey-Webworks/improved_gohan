@@ -1,4 +1,4 @@
-print("Improved V1.0")
+print("Improved V1.1")
 
 local p = game.Players.LocalPlayer
 local qg = game.workspace.Others.NPCs["Kid Nohag"]
@@ -14,13 +14,19 @@ coroutine.wrap(function()
     end
 end)()
 
+coroutine.wrap(function()
+    local clockTime = game.Lighting.ClockTime;
+    print("la hora es "..clockTime..)
+    if (clockTime > 0 and clockTime < 12) then
+        events.TP:InvokeServer("Earth")
+    end
+end)()
+
 while task.wait(0.1) do  -- Reduce la espera para mejorar la responsividad
     
     local clockTime = game.Lighting.ClockTime;
     
-    if (clockTime > 0 and clockTime < 12) then
-        events.TP:InvokeServer("Earth")
-    end
+
 
     if _G.rebirth then
        events.reb:InvokeServer()
